@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QazTurs - Главная</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app with-nav">
+        <header class="header">
+            <div class="header-top">
+                <h1>QazTurs</h1>
+                <button class="lang-toggle" id="langToggle">🌐</button>
+            </div>
+            <div class="lang-menu" id="langMenu">
+                <button data-lang="ru" class="lang-btn">Русский</button>
+                <button data-lang="en" class="lang-btn">English</button>
+                <button data-lang="kk" class="lang-btn">Қазақша</button>
+            </div>
+        </header>
+        <main class="main">
+            <section class="tab-panel active" id="homeTab">
+                <h2 data-translate="main"></h2>
+                <p class="tab-text" data-translate="welcome"></p>
+                <div class="map-card">
+                    <iframe class="map-frame" src="https://www.google.com/maps/d/embed?mid=1GCGq6KAvLcWgr0pW49galS6yUl0C06M&ehbc=2E312F" width="640" height="480" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+            <section class="tab-panel" id="addTab">
+                <h2 data-translate="addPlaceTitle"></h2>
+                <form id="addPlaceForm" class="form">
+                    <input type="text" id="placeName" data-translate-placeholder="placeName" placeholder="" required>
+                    <input type="text" id="placeDescription" data-translate-placeholder="placeDescription" placeholder="" required>
+                    <button type="submit" class="button" data-translate="addButton"></button>
+                </form>
+            </section>
+            <section class="tab-panel" id="placesTab">
+                <h2 data-translate="placesTitle"></h2>
+                <ul id="approvedPlaces" class="place-list"></ul>
+            </section>
+            <section class="tab-panel" id="profileTab">
+                <h2 data-translate="profile"></h2>
+                <div class="profile-card">
+                    <div class="avatar-preview" id="avatarPreview" data-translate="avatar"></div>
+                    <div class="profile-info">
+                        <p class="profile-label" data-translate="user"></p>
+                        <p id="profileName" class="profile-value"></p>
+                        <label class="avatar-upload" data-translate="chooseAvatar">
+                            <input type="file" id="avatarInput" accept="image/*">
+                        </label>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="button button-logout" data-translate="logout"></button>
+            </section>
+        </main>
+        <nav class="bottom-nav">
+            <button type="button" class="nav-item active" data-tab="homeTab">
+                <span class="nav-icon"></span>
+                <span class="nav-label" data-translate="main"></span>
+            </button>
+            <button type="button" class="nav-item" data-tab="addTab">
+                <span class="nav-icon"></span>
+                <span class="nav-label" data-translate="addPlace"></span>
+            </button>
+            <button type="button" class="nav-item" data-tab="placesTab">
+                <span class="nav-icon"></span>
+                <span class="nav-label" data-translate="places"></span>
+            </button>
+            <button type="button" class="nav-item" data-tab="profileTab">
+                <span class="nav-icon"></span>
+                <span class="nav-label" data-translate="profile"></span>
+            </button>
+        </nav>
+    </div>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
